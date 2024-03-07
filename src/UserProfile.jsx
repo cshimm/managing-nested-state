@@ -11,6 +11,10 @@ export const UserProfile = () => {
         }
     });
     const updateAddress = (street, city, country) => {
+        // I can achieve immutability by creating a new object literal from properties of the
+        // previous state by utilizing the spread operator. This way the state is not being
+        // directly mutated. By performing a local mutation we achieve a higher degree of
+        // control and predictability in regard to state management.
         setUserProfile({
             ...userProfile,
             address: {...userProfile.address, street, city, country,}
